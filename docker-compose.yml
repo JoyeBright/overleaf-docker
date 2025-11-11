@@ -13,7 +13,7 @@ services:
     restart: always
 
   overleaf:
-    image: joyebright/overleaf-classicthesis:latest
+    image: joyebright/overleaf-classicthesis:final
     container_name: overleaf
     restart: always
     ports:
