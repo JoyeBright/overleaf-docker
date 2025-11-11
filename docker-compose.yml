@@ -1,0 +1,35 @@
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    restart: always
+    command: ["--replSet", "rs0", "--bind_ip_all"]
+    volumes:
+      - mongo-data:/data/db
+
+  redis:
+    image: redis:6.2
+    container_name: redis
+    restart: always
+
+  overleaf:
+    image: joyebright/overleaf-classicthesis:latest
+    container_name: overleaf
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - mongo
+      - redis
+    environment:
+      - OVERLEAF_MONGO_URL=mongodb://mongo/sharelatex
+      - OVERLEAF_REDIS_HOST=redis
+      - OVERLEAF_APP_NAME=Overleaf Local
+      - OVERLEAF_SITE_URL=http://localhost:8080
+      - OVERLEAF_ALLOW_PUBLIC_REGISTRATION=true
+      - OVERLEAF_EMAIL_FROM_ADDRESS=overleaf@example.com
+      - OVERLEAF_ADMIN_EMAIL=admin@example.com
+
+volumes:
+  mongo-data:
+
