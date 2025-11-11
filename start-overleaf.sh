@@ -1,6 +1,9 @@
 #!/bin/bash
 echo "Starting Overleaf for class..."
 
+# 0. down services (old ones as well)
+docker compose down -v
+
 # 1. Start services
 docker compose up -d
 
