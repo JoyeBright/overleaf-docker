@@ -4,6 +4,9 @@ Run **Overleaf Community Edition** locally with **Docker** and all LaTeX package
 
 ---
 
+## Guide
+https://j-pourmostafa.notion.site/Guide-to-Using-Overleaf-Locally-2a8cc5b4c1be80658d4aeccf923fbfa9?pvs=74
+
 ## Quick Start
 
 ```bash
