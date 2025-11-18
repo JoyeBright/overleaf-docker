@@ -12,7 +12,7 @@ sleep 5
 
 # 3. Initialize replica set if not already done
 if ! docker exec mongo mongosh --eval "rs.status()" | grep -q '"set" : "rs0"'; then
-  echo "🔧 Initializing MongoDB replica set..."
+  echo "Initializing MongoDB replica set..."
   docker exec mongo mongosh --eval "rs.initiate()"
 fi
 
