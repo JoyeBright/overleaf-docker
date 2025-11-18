@@ -1,4 +1,4 @@
-# 🧠 Overleaf on Docker — Local Edition
+# Overleaf on Docker — Local Edition
 
 Run **Overleaf Community Edition** locally with **Docker** and all LaTeX packages preinstalled — no setup needed.
 
